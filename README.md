@@ -34,7 +34,7 @@ Stay tuned — I’ll be updating this repo as I learn and build new things!
 ---
 
 ### 💬 Connect With Me
-🔗 [GitHub Profile](https://github.com/YOUR_USERNAME)  
+🔗 [GitHub Profile](https://github.com/0x-DevSec)  
 💡 Always open to tips, ideas, or study buddies!
 
 ---
