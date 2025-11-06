@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* Style for paragraphs that contain "error" */
+    .error {
+      padding: 10px;
+      color: red;
+      border: 1px dotted red;
+    }
+
+    /* Style for paragraphs that contain "success" */
+    .is-true {
+      padding: 10px;
+      color: green;
+      border: 1px dotted green;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>The DOM Example</h1>
+
+  <!-- Sample paragraphs -->
+  <p>Even a test hidden in the résumé can delay the path to success.</p>
+  <p>Her joy turned to concern when an error blocked the team’s progress.</p>
+  <p>The system showed an error, but the engineer’s quick fix ensured success.</p>
+  <p>An error once felt heavy, yet it became the bridge to lasting success.</p>
+  <p>Through each error and retry, their final success felt like pure bijou.</p>
+
+  <script>
+    // Select all <p> elements on the page
+    const paragraphs = document.querySelectorAll("p");
+
+    // Loop through each paragraph
+    paragraphs.forEach(paragraph => {
+
+      // Get the text of the paragraph
+      const text = paragraph.textContent.toLowerCase();
+
+      // Check if the paragraph contains the word "success"
+      if (text.includes("success")) {
+        paragraph.classList.add("is-true"); // Add green styling
+      }
+      // Otherwise, check if it contains "error"
+      else if (text.includes("error")) {
+        paragraph.classList.add("error"); // Add red styling
+      }
+      // If neither word is found, no class is added
+    });
+  </script>
+</body>
+
+</html>
