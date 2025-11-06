@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NodeList vs HTMLCollection Demo</title>
+  <style>
+    body { font-family: sans-serif; margin: 20px; }
+    ul { padding: 0; list-style: none; }
+    li { background: #f0f0f0; margin: 5px 0; padding: 8px; border-radius: 5px; }
+    button { margin-top: 10px; }
+  </style>
+</head>
+<body>
+
+  <h2>NodeList vs HTMLCollection</h2>
+
+  <ul id="list">
+    <li>Item 1</li>
+    <li>Item 2</li>
+  </ul>
+
+  <button id="add">➕ Add Item</button>
+
+  <pre id="output"></pre>
+
+  <script>
+    // NodeList (static)
+    const nodeList = document.querySelectorAll('#list li');
+    // HTMLCollection (live)
+    const htmlCollection = document.getElementById('list').getElementsByTagName('li');
+
+    const output = document.getElementById('output');
+    const button = document.getElementById('add');
+
+    function showCounts() {
+      output.textContent = `
+NodeList length:      ${nodeList.length}
+HTMLCollection length: ${htmlCollection.length}
+`;
+    }
+
+    showCounts();
+
+    button.addEventListener('click', () => {
+      const li = document.createElement('li');
+      li.textContent = `Item ${htmlCollection.length + 1}`;
+      document.getElementById('list').appendChild(li);
+      showCounts();
+    });
+  </script>
+
+</body>
+</html>
