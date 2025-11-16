@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Basics</title>
+</head>
+
+<style>
+    .target {
+        color: blue;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <h1 id="main-title">List of Movies</h1>
+        <ul>
+            <li class="list_movies">Matrix</li>
+            <li class="list_movies">Start War</li>
+            <li class="list_movies">Batman</li>
+            <li class="list_movies">Spiderman</li>
+            <li class="list_movies">ADAM</li>
+        </ul>
+    </div>
+
+    <script>
+        // DOM manipulation
+
+        // get element by id
+        let title = document.getElementById('main-title');
+        console.log(title);
+
+        // get element by classe name
+        const list = document.getElementsByClassName('list_movies');
+        console.log(list);
+
+        // get element by tag name
+        const li = document.getElementsByTagName('li');
+        console.log(li);
+
+        // QuertySelector() select first one
+
+        const select = document.querySelector('.list_movies');
+        console.log(select);
+
+        // QuertySelectorAll() select ALL
+        const selectall = document.querySelectorAll('.list_movies');
+        console.log(selectall);
+
+        // change style
+        title.style.color = 'red';
+
+        selectall.forEach(function (element) {
+            element.style.color = 'green';
+        })
+
+        // creating element
+        const nlist = document.querySelector("ul");
+        const mylist = document.createElement("li");
+        // adding element
+        nlist.append(mylist);
+
+        // modifying elemenent
+        mylist.innerHTML = 'new';
+
+        // Modifying attributes and Classes
+        mylist.setAttribute('class', 'target');
+
+        // mylist.removeAttribute('class');
+
+
+        // get attribute
+        console.log(title.getAttribute('id'));
+
+        // mylist.classList.remove('target');
+        mylist.classList.add('target');
+
+        let check = mylist.classList.contains('target');
+        console.log(check);
+
+        // remove element
+
+        // mylist.remove();
+
+
+        // traversal the dom
+        // parent node traversal
+        console.log(nlist.parentNode);
+        console.log(nlist.parentElement);
+
+        // child node traversal
+        console.log(nlist.childNodes);
+        console.log(nlist.firstChild);
+        console.log(nlist.lastChild);
+
+        nlist.childNodes[1].style.backgroundColor = 'gray';
+
+
+        console.log(nlist.children);
+        console.log(nlist.firstElementChild);
+        console.log(nlist.lastElementChild);
+
+
+        // sibling Node Traversal
+         const div = document.querySelector('div');
+         console.log(div.childNodes);
+         console.log(nlist.previousElementSibling);
+         console.log(nlist.nextElementSibling);
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
