@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parents, Children & Siblings</title>
+</head>
+<body>
+    <article>
+        <h1>hello</h1>
+        <p>test my js skills</p>
+        <p>test me again</p>
+        <div></div>
+    </article>
+
+    <script>
+        const article = document.querySelector('article');
+        // console.log(article.children);
+        // console.log(Array.from(article.children));
+
+        // access to children 
+        Array.from(article.children).forEach(child => {
+            child.classList.add('border');
+        })
+
+        // get parent element
+       const title = document.querySelector('h1');
+       console.log(title.parentElement);
+       // level parent
+       console.log(title.parentElement.parentElement);
+
+       // next sibling
+       console.log(title.nextElementSibling);
+
+
+
+    </script>
+</body>
+</html>
